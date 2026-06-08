@@ -3,3 +3,8 @@ services:
     image: adminer:latest
     ports:
       - "8080:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./plugins/login-password-less.php:/var/www/html/plugins/login-password-less.php
+      - ./plugins-enabled:/var/www/html/plugins-enabled
